@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO META -->
+  <title>Global Business Marketplace | Find Products & Services Worldwide</title>
+  <meta name="description" content="Discover products and services from trusted small businesses worldwide. Search and contact sellers instantly on WhatsApp.">
+
+  <!-- FONT -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary: #2563eb;
+      --bg: #f8fafc;
+      --card: #ffffff;
+      --text: #0f172a;
+      --muted: #64748b;
+      --border: #e5e7eb;
+    }
+
+    [data-theme="dark"] {
+      --bg: #020617;
+      --card: #020617;
+      --text: #f8fafc;
+      --muted: #94a3b8;
+      --border: #1e293b;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 0;
+    }
+
+    .theme-toggle {
+      background: none;
+      border: 1px solid var(--border);
+      padding: 8px 14px;
+      border-radius: 8px;
+      color: var(--text);
+      cursor: pointer;
+    }
+
+    .hero {
+      padding: 80px 0;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 2.4rem;
+      margin-bottom: 16px;
+    }
+
+    .hero p {
+      color: var(--muted);
+      max-width: 720px;
+      margin: auto;
+      margin-bottom: 32px;
+    }
+
+    .cta-buttons {
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 14px 28px;
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: pointer;
+      border: none;
+      text-decoration: none;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: #fff;
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--primary);
+      border: 2px solid var(--primary);
+    }
+
+    .search-box {
+      background: var(--card);
+      border: 1px solid var(--border);
+      padding: 28px;
+      border-radius: 14px;
+      margin-top: 40px;
+    }
+
+    .search-fields {
+      display: grid;
+      grid-template-columns: 1fr 1fr auto;
+      gap: 12px;
+    }
+
+    input, select {
+      padding: 14px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: transparent;
+      color: var(--text);
+    }
+
+    section {
+      padding: 70px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      padding: 28px;
+      border-radius: 14px;
+    }
+
+    .cta {
+      background: var(--primary);
+      color: #fff;
+      text-align: center;
+      padding: 70px 20px;
+      border-radius: 18px;
+      margin: 80px auto;
+    }
+
+    footer {
+      padding: 40px 0;
+      text-align: center;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 2rem; }
+      .search-fields { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <header>
+      <strong>Platform Name</strong>
+      <button class="theme-toggle" onclick="toggleTheme()">🌙 Toggle</button>
+    </header>
+  </div>
+
+  <div class="hero container">
+    <h1>Discover Products & Services From Trusted Businesses Worldwide</h1>
+    <p>
+      Search, compare, and connect directly with small business owners anywhere in the world — instantly on WhatsApp.
+    </p>
+
+    <div class="cta-buttons">
+      <a href="#search" class="btn btn-primary">Search Products</a>
+      <a href="#business" class="btn btn-outline">List Your Business</a>
+    </div>
+
+    <div class="search-box" id="search">
+      <div class="search-fields">
+        <input id="searchQuery" type="text" placeholder="Product or service" />
+        <select id="searchLocation">
+          <option value="Global">All Locations</option>
+          <option value="USA">USA</option>
+          <option value="UK">UK</option>
+          <option value="Nigeria">Nigeria</option>
+        </select>
+        <button class="btn btn-primary" onclick="search()">Search</button>
+      </div>
+    </div>
+  </div>
+
+  <section class="container">
+    <div class="section-title">
+      <h2>How It Works</h2>
+      <p>Search. Discover. Chat instantly.</p>
+    </div>
+
+    <div class="grid-3">
+      <div class="card">
+        <h4>Search</h4>
+        <p>Find products or services by keyword and location.</p>
+      </div>
+      <div class="card">
+        <h4>Compare</h4>
+        <p>Review prices and business details.</p>
+      </div>
+      <div class="card">
+        <h4>Chat on WhatsApp</h4>
+        <p>Contact sellers instantly with a pre-filled message.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="container cta" id="business">
+    <h2>Grow Your Business Without Complexity</h2>
+    <p>Reach customers globally and receive inquiries directly on WhatsApp.</p>
+    <button class="btn" onclick="contactWhatsApp()">Chat With Us on WhatsApp</button>
+  </div>
+
+  <footer>
+    © 2025 Platform Name. All rights reserved.
+  </footer>
+
+  <script>
+    function toggleTheme() {
+      const theme = document.documentElement.getAttribute("data-theme");
+      const newTheme = theme === "dark" ? "light" : "dark";
+      document.documentElement.setAttribute("data-theme", newTheme);
+      localStorage.setItem("theme", newTheme);
+    }
+
+    (function () {
+      const savedTheme = localStorage.getItem("theme");
+      if (savedTheme) {
+        document.documentElement.setAttribute("data-theme", savedTheme);
+      }
+    })();
+
+    function contactWhatsApp() {
+      const phone = "2348000000000";
+      const message = encodeURIComponent(
+        "Hello, I would like to list my business on your platform."
+      );
+      window.open(`https://wa.me/${phone}?text=${message}`, "_blank");
+    }
+
+    function search() {
+      const query = document.getElementById("searchQuery").value;
+      const location = document.getElementById("searchLocation").value;
+      alert(`Searching for "${query}" in ${location}`);
+    }
+  </script>
+
+</body>
+</html>
